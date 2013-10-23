@@ -12,4 +12,16 @@ class ApplicationController < ActionController::Base
   		cart
   	end
 
+    def count_num_visit
+      if session[:counter].nil?
+        session[:counter] = 1
+      else
+        session[:counter] += 1
+      end
+    end
+
+    def reset_num_visit
+      session[:counter] = 0
+    end
+
 end
